@@ -1170,6 +1170,12 @@ select {
 .duration-150 {
   transition-duration: 150ms;
 }
+.duration-500 {
+  transition-duration: 500ms;
+}
+.duration-300 {
+  transition-duration: 300ms;
+}
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -1195,6 +1201,11 @@ select {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+.hover\:scale-125:hover {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: var(--tw-transform);
 }
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;

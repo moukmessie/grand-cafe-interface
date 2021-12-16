@@ -7,7 +7,6 @@ window.Alpine = Alpine;
 Alpine.start();
 
 
-
 const bg = document.querySelector('#burger');
 const menu=document.querySelector('#menu');
 
@@ -16,18 +15,16 @@ const burger='<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" id="on" fi
 
 const burgerOff = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" id="off" fill="none" viewBox="0 0 24 24" stroke="currentColor">'+
     '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />'+'</svg>'
-const on=document.querySelector('#on');
-const off=document.querySelector('#off');
 
-console.log(on);
+bg.innerHTML=burger;
+console.log(burger);
 bg.addEventListener('click',function (){
     if(menu.classList.contains('hidden')){
         menu.classList.remove('hidden');
-        on.remove();
-
+        bg.innerHTML=burgerOff;
     }else {
         menu.classList.add('hidden');
-
+        bg.innerHTML=burger;
     }
 })
 

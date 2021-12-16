@@ -5455,15 +5455,15 @@ var bg = document.querySelector('#burger');
 var menu = document.querySelector('#menu');
 var burger = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" id="on" fill="none" viewBox="0 0 24 24" stroke="currentColor">' + '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />' + '</svg>';
 var burgerOff = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" id="off" fill="none" viewBox="0 0 24 24" stroke="currentColor">' + '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />' + '</svg>';
-var on = document.querySelector('#on');
-var off = document.querySelector('#off');
-console.log(on);
+bg.innerHTML = burger;
+console.log(burger);
 bg.addEventListener('click', function () {
   if (menu.classList.contains('hidden')) {
     menu.classList.remove('hidden');
-    on.remove();
+    bg.innerHTML = burgerOff;
   } else {
     menu.classList.add('hidden');
+    bg.innerHTML = burger;
   }
 });
 

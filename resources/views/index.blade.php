@@ -51,11 +51,19 @@
                 </nav>
             </div><!-- end nav -->
             <main class="px-16 py-6 bg-gray-100 md:col-span-2">
-                <div class="flex justify-center md:justify-end">
-                    <a href="#" class=" btn p-2 text-sm text-primary border-primary md:border-2 hover:bg-primary  hover:text-white">Se connecter</a>
-                    <a href="#" class="btn p-2 text-sm text-primary ml-3 border-primary md:border-2 hover:bg-primary hover:text-white">S'inscrire</a>
-                </div>
+                @if (Route::has('login'))
+                    <div class="flex justify-center md:justify-end">
+                        @auth
+                            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                @else
+                            <a href="{{ route('login') }}" class=" btn p-2 text-sm text-primary border-primary md:border-2 hover:bg-primary  hover:text-white transition ease-out duration-500">Se connecter</a>
 
+                            @if(Route::has('register'))
+                                <a href="{{ route('register') }}" class="btn p-2 text-sm text-primary ml-3 border-primary md:border-2 hover:bg-primary hover:text-white transition ease-out duration-500">S'inscrire</a>
+                            @endif
+                        @endauth
+                    </div>
+                @endif
                 <!--div class="flex items-center">
                     <div class="bg-gray-500 h-4 w-6"></div>
                     <div class="bg-red-500 h-8 w-6"></div>
@@ -121,12 +129,12 @@
                     </div>
 
                     <div class="flex justify-center">
-                        <div class=" btn p-2 bg-secondary-100 text-secondary-200  hover:shadow-inner">Voir plus</div>
+                        <div class=" btn p-2 bg-secondary-100 text-secondary-200  hover:shadow-inner transform hover:scale-125 hover;bg-opacity-50 transition ease-out duration-300">Voir plus</div>
                     </div>
                 </div>
 
             </main>
         </div>
-        <script src="js/app.js"></script>
+        <script src="{{asset("js/app.js")}}"></script>
     </body>
 </html>
